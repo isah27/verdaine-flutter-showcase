@@ -29,7 +29,7 @@ class RitualController extends ChangeNotifier {
   double get progress =>
       _plan.steps.isEmpty ? 0 : _done.length / _plan.steps.length;
 
-  /// Called by the proxy provider when the saved answers change.
+  /// Re-plans if the saved answers change.
   void updateProfile(SkinProfile next) {
     if (next == _profile) return;
     _profile = next;
